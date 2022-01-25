@@ -28,17 +28,20 @@
     <a href="post.php"><button>Create Post</button></a>
     <table border="1" cellpadding="5px">
         <tr>
+            <th>SN</th>
             <th>ID</th>
             <th>Title</th>
             <th>Description</th>
             <th>Post Date</th>
             <th>Status</th>
         </tr>
-        <?php  
+        <?php
+            $x = 1;  
             $posts = $db->viewAllPost();
             foreach($posts as $post):
         ?>
         <tr>
+            <td><?= $x;?></td>
             <td><?= $post['id']?></td>
             <td><?= $post['title']?></td>
             <td><?= $post['description']?></td>
@@ -48,8 +51,12 @@
                 <a href="update.php?id=<?=$post['id']?>">Update</a> |
                 <a href="all-post.php?delete=<?=$post['id']?>">Delete</a>
             </td>
+            
         </tr>
-        <?php  endforeach; ?>
+        <?php 
+            $x++;  
+            endforeach;
+        ?>
     </table>
 
 
