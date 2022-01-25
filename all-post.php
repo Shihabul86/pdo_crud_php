@@ -49,7 +49,7 @@
             <td>
                 <a href="single-post.php?id=<?=$post['id']?>">View</a> |
                 <a href="update.php?id=<?=$post['id']?>">Update</a> |
-                <a href="all-post.php?delete=<?=$post['id']?>">Delete</a>
+                <a onclick="return confirm('Do you want to delete this data?')" href="all-post.php?delete=<?=$post['id']?>">Delete</a>
             </td>
             
         </tr>
